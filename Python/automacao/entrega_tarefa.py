@@ -10,7 +10,7 @@ time.sleep(2)
 teams = 'teams.png'
 
 
-local = pa.locateOnScreen(teams, confidence=0.8)
+local = pa.locateOnScreen(teams, confidence=0.3)
 
 if local:
     center_x, center_y = pa.center(local)
