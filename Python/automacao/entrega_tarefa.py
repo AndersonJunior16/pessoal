@@ -1,9 +1,19 @@
 import pyautogui as pa
 import time
 
-pa.PAUSE = 3
+pa.PAUSE = 2
 
-# Trocar para a próxima janela usando alt+tab
 pa.hotkey('alt', 'tab')
 
-teams = 'C:\Users\0220482413040\Documents\pessoal\pessoal\Python\automacao'
+time.sleep(2)
+
+teams = 'teams.png'
+
+
+local = pa.locateOnScreen(teams, confidence=0.8)
+
+if local:
+    center_x, center_y = pa.center(local)
+    pa.click(center_x, center_y)
+else:
+    print('Não achado')
