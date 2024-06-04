@@ -1,19 +1,14 @@
 import pyautogui as pa
 import time
+import os
 
 pa.PAUSE = 2
 
-pa.hotkey('alt', 'tab')
-
-time.sleep(2)
-
-teams = 'teams.png'
 
 
-local = pa.locateOnScreen(teams, confidence=0.3)
+teams = 'C:/Users/0220482413040/Documents/pessoal/pessoal/Python/automacao/teams.png'
 
-if local:
-    center_x, center_y = pa.center(local)
-    pa.click(center_x, center_y)
-else:
-    print('Não achado')
+
+local = pa.locateCenterOnScreen(teams, confidence=0.8)
+
+pa.click(local.x, local.y)
